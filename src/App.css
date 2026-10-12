@@ -1,0 +1,133 @@
+.shop-shell {
+  color: #0f172a;
+}
+
+.auth-page {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(99, 102, 241, 0.28), transparent 36%),
+    radial-gradient(circle at 85% 10%, rgba(168, 85, 247, 0.22), transparent 32%),
+    linear-gradient(160deg, #111827, #312e81 55%, #4338ca);
+}
+
+.auth-card {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(6px);
+}
+
+.shop-header {
+  background: linear-gradient(120deg, #312e81, #4f46e5 55%, #7c3aed);
+  color: #fff;
+  box-shadow: 0 16px 32px -20px rgba(55, 48, 163, 0.7);
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px -18px rgba(15, 23, 42, 0.6);
+}
+
+.page-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.shop-nav-btn {
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #e0e7ff;
+  transition: 0.2s ease;
+}
+
+.shop-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.shop-nav-btn.active {
+  border-color: #fff;
+  color: #1e1b4b;
+  background: #fff;
+}
+
+.field {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.75rem;
+  padding: 0.58rem 0.8rem;
+  font-size: 0.875rem;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+.primary-btn,
+.ghost-btn {
+  border-radius: 0.75rem;
+  padding: 0.58rem 0.95rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.primary-btn {
+  background: #4f46e5;
+  color: #fff;
+  border: 1px solid #4f46e5;
+}
+
+.primary-btn:hover {
+  background: #4338ca;
+}
+
+.ghost-btn {
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  background: #fff;
+}
+
+.ghost-btn:hover {
+  background: #f8fafc;
+}
+
+.ghost-btn:disabled,
+.primary-btn:disabled {
+  cursor: not-allowed;
+}
+
+.small-btn {
+  padding: 0.38rem 0.68rem;
+  font-size: 0.75rem;
+}
+
+.product-card {
+  border: 1px solid #e2e8f0;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+}
+
+.product-image {
+  height: 7rem;
+  border-radius: 0.65rem;
+  background: linear-gradient(130deg, #c7d2fe 0%, #e2e8f0 100%);
+}
+
+.order-pill {
+  border-radius: 999px;
+  border: 1px solid #c7d2fe;
+  background: #eef2ff;
+  color: #3730a3;
+  padding: 0.22rem 0.62rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
