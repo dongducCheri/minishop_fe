@@ -112,7 +112,7 @@ export const api = {
   createConversation: (token: string) =>
     apiRequest<Conversation>('/conversations', { method: 'POST', token }),
 
-  getConversationMessages: (token: string, conversationId: number, page = 1) =>
-    apiRequest<ChatMessage[]>(`/conversations/${conversationId}/messages?page=${page}`, { token }),
+  getConversationMessages: (token: string, conversationId: number, page = 1, perPage = 50) =>
+    apiRequest<ChatMessage[]>(`/conversations/${conversationId}/messages?page=${page}&per_page=${perPage}`, { token }),
 }
 

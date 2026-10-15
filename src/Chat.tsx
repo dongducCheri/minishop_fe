@@ -38,9 +38,9 @@ export function Chat({ token, currentUser }: ChatProps) {
         setLoading(true)
         const data = await api.getConversations(token)
         setConversations(data)
-        if (!isAdmin && data.length > 0) {
-          // Khách hàng thì chọn ngay cuộc trò chuyện đầu tiên đang mở
-          setActiveConversation(data[0])
+        if (data.length > 0) {
+          // Tự động chọn cuộc trò chuyện mới nhất nếu chưa chọn
+          setActiveConversation((prev) => prev ? (data.find((c) => c.id === prev.id) || data[0]) : data[0])
         }
       } catch (err: any) {
         setError(err.message || 'Không thể tải danh sách cuộc trò chuyện')
