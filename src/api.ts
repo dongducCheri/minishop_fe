@@ -1,6 +1,8 @@
 import type {
   CartResponse,
   Category,
+  ChatMessage,
+  Conversation,
   LoginResponse,
   Order,
   Product,
@@ -101,5 +103,16 @@ export const api = {
       token,
       body: { score, feedback },
     }),
+
+ 
+  // Chat & Conversation API
+  getConversations: (token: string) =>
+    apiRequest<Conversation[]>('/conversations', { token }),
+
+  createConversation: (token: string) =>
+    apiRequest<Conversation>('/conversations', { method: 'POST', token }),
+
+  getConversationMessages: (token: string, conversationId: number, page = 1) =>
+    apiRequest<ChatMessage[]>(`/conversations/${conversationId}/messages?page=${page}`, { token }),
 }
 

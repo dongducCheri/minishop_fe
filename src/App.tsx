@@ -2,13 +2,14 @@ import { useEffect, useMemo, useState } from 'react'
 import type { FormEvent } from 'react'
 import { api } from './api'
 import type { CartResponse, Category, Order, Product, ProductReviewsResponse, User } from './types'
+import { Chat } from './Chat'
 import './App.css'
 
 const TOKEN_STORAGE_KEY = 'minishop_api_token'
 const PER_PAGE = 8
 const ORDER_STATUSES = ['shipped', 'delivered', 'cancelled'] as const
 
-type Screen = 'login' | 'shop' | 'cart' | 'orders' | 'reviews' | 'admin' | 'categories'
+type Screen = 'login' | 'shop' | 'cart' | 'orders' | 'reviews' | 'admin' | 'categories' | 'chat'
 
 function formatMoney(cents: number): string {
   return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(cents / 100)
@@ -360,6 +361,7 @@ function App() {
     { id: 'reviews', label: 'Reviews', show: true },
     { id: 'cart', label: `Cart (${cartItemsCount})`, show: true },
     { id: 'orders', label: 'My Orders', show: true },
+    { id: 'chat', label: isAdmin ? 'Live Chats' : 'Support Chat', show: true },
     { id: 'admin', label: 'Admin Orders', show: isAdmin },
     { id: 'categories', label: 'Categories', show: isAdmin },
   ]
@@ -905,6 +907,8 @@ function App() {
           </div>
         </section>
       )}
+
+      {screen === 'chat' && <Chat token={token} currentUser={me} />}
     </main>
   )
 }

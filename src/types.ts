@@ -84,3 +84,21 @@ export interface ProductReviewsResponse {
   reviews_count: number
   reviews: Review[]
 }
+
+export interface Conversation {
+  id: number
+  status: 'open' | 'closed'
+  user_id: number
+  user_email?: string
+  admin_id?: number | null
+  created_at: string
+  updated_at: string
+}
+
+export interface ChatMessage {
+  id: number
+  body: string
+  sender_id: number
+  sender_role: 'customer' | 'admin'
+  created_at: string
+}
